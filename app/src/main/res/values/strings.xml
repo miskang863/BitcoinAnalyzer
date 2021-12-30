@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Bitcoin Analyzer</string>
+    <string name="bearish">Longest bearish trend: %1$d days</string>
+    <string name="dateRange">Date range\n%1$s - %2$s</string>
+    <string name="noProfit">Oh no, there is no profit to be made on this date range!</string>
+    <string name="profit">For maximum profit:\nBuy at %1$s\nSell at %2$s\nTotal profit: %3$s%4$s </string>
+    <string name="volume">Maximum volume:  %2$s%3$s\nat %1$s</string>
+    <string name="startDate">Start date selected: %1$s</string>
+    <string name="endDate">End date selected: %1$s</string>
+    <string name="dateFormat">dd.MM.yyyy</string>
+    <string name="toUnixdateFormat">dd.MM.yyyy HH:mm:ss</string>
+    <string name="select_date_range_below">Select date range below</string>
+
+</resources>
