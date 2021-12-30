@@ -1,6 +1,6 @@
 # BitcoinAnalyzer
 
-This android application that uses CoinGecko API to analyze Bitcoin.
+This is a small Android application that uses CoinGecko API to analyze Bitcoin.
 
 ## Features
 - Calendar to select date range to analyze
