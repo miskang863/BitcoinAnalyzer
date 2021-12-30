@@ -1,4 +1,4 @@
-# BitcoinAnalyzer
+# Bitcoin Analyzer
 
 This is a small Android application that uses CoinGecko API to analyze Bitcoin.
 
