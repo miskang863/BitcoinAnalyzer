@@ -12,7 +12,7 @@ This is a small Android application that uses CoinGecko API to analyze Bitcoin.
 
 ## How to run
 
-1. Download application as .apk package from here: [Google Drive](https://drive.google.com/file/d/14LYjOND9DrZtnszZo0YJnB3eYCTtZOUM/view?usp=sharing)
+1. Download application as .apk package from here: [Google Drive](https://drive.google.com/file/d/1EEvexpS6lW5aU0kSfnABtt-7BwTuyr7p/view?usp=sharing)
 2. Install it on your android device/emulator of your choice.
 
 OR
