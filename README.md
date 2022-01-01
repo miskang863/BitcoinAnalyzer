@@ -17,6 +17,6 @@ This is a small Android application that uses CoinGecko API to analyze Bitcoin.
 
 OR
 
-1. Clone this GitHub repository
+1. Clone this GitHub repository (don't download as zip)
 2. Open the project with Android Studio
 3. Run the project with emulator of your choice
