@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private MainActivityViewModel viewModel;
     BitcoinCalculations calculator = new BitcoinCalculations();
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +60,14 @@ public class MainActivity extends AppCompatActivity {
 
         //Here we handle user inputs, save dates user selects and make the API call
         mCalendarView.setOnDateChangeListener((calendarView, i, i1, i2) -> {
+
             String date = i2 + "." + (i1 + 1) + "." + i + " 00:00:00";
 
             //If user selects a date from future, show error Toast.
             if ((calculator.toUnixConverter(date) * 1000) > System.currentTimeMillis()) {
                 showCustomToast(getString(R.string.dateError));
-            } else if (!viewModel.isStartOrEndDateBoolean()) {
+            }
+            else if (!viewModel.isStartOrEndDateBoolean()) {
                 viewModel.setStartDate(date);
                 viewModel.setStartOrEndDateBoolean(true);
                 showCustomToast(getString(R.string.startDate, viewModel.getStartDate()));
