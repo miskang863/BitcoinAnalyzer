@@ -10,5 +10,7 @@
     <string name="dateFormat">dd.MM.yyyy</string>
     <string name="toUnixdateFormat">dd.MM.yyyy HH:mm:ss</string>
     <string name="select_date_range_below">Select date range below</string>
+    <string name="dateError">Please select a past date</string>
+
 
 </resources>

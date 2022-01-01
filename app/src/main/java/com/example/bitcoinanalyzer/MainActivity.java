@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RequestQueue mQueue;
     private MainActivityViewModel viewModel;
+    BitcoinCalculations calculator = new BitcoinCalculations();
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -58,13 +59,16 @@ public class MainActivity extends AppCompatActivity {
 
         //Here we handle user inputs, save dates user selects and make the API call
         mCalendarView.setOnDateChangeListener((calendarView, i, i1, i2) -> {
-            if (!viewModel.isStartOrEndDateBoolean()) {
-                String date = i2 + "." + (i1 + 1) + "." + i + " 00:00:00";
+            String date = i2 + "." + (i1 + 1) + "." + i + " 00:00:00";
+
+            //If user selects a date from future, show error Toast.
+            if ((calculator.toUnixConverter(date) * 1000) > System.currentTimeMillis()) {
+                showCustomToast(getString(R.string.dateError));
+            } else if (!viewModel.isStartOrEndDateBoolean()) {
                 viewModel.setStartDate(date);
                 viewModel.setStartOrEndDateBoolean(true);
                 showCustomToast(getString(R.string.startDate, viewModel.getStartDate()));
             } else {
-                String date = i2 + "." + (i1 + 1) + "." + i + " 01:00:00";
                 viewModel.setEndDate(date);
                 viewModel.setStartOrEndDateBoolean(false);
                 showCustomToast(getString(R.string.endDate, viewModel.getEndDate()));
@@ -100,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
     //Fetch the data from CoinGecko API
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void getBitcoinData(long startDate, long endDate) {
-        BitcoinCalculations calculator = new BitcoinCalculations();
         Currency currency = Currency.getInstance("EUR");
         String url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart/range?vs_currency=eur&from=" + startDate + "&to=" + endDate;
 
